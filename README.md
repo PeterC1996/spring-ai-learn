@@ -67,9 +67,21 @@ mvn test
 
 现有测试只覆盖计算器、订单查询、关键词分流和样例文档，不发起网络请求。
 
+## 背景知识
+
+先读概念再跑代码。后面看 `ChatClient`、Advisor 和路由时，少猜一层「这行到底在补模型的哪一种无能」。
+
+| 文档 | 读完能回答什么 |
+| --- | --- |
+| [docs/LLM-BASICS.md](docs/LLM-BASICS.md) | token、上下文、temperature、三种角色、对话和嵌入、流式、工具调用、幻觉、OpenAI 兼容 API |
+| [docs/AI-AGENTS.md](docs/AI-AGENTS.md) | Agent 由什么组成，ReAct、记忆和 RAG、路由，以及它们对应 01–05 的哪一课 |
+| [docs/READING-LIST.md](docs/READING-LIST.md) | 按优先级排好的外链，每条一句话说明为什么读 |
+
+技术栈以仓库为准：Spring Boot 3.5.x + Spring AI 1.1.x（`spring-ai-starter-model-openai`）。官方文档请打开 1.1 参考。Spring AI 2.x 对应 Spring Boot 4。
+
 ## 学习顺序
 
-一次只启动一个模块。端口故意错开，避免你忘记停掉上一个。
+一次只启动一个模块。端口故意错开，避免你忘记停掉上一个。建议先花半天读上面的两篇背景，再做第 1 天。
 
 | 顺序 | 目录 | 端口 | 这一课看什么 |
 | --- | --- | --- | --- |
@@ -194,6 +206,9 @@ curl -s http://localhost:8085/chat \
 ├── .gitignore
 ├── .env.example
 ├── pom.xml
+├── docs/LLM-BASICS.md
+├── docs/AI-AGENTS.md
+├── docs/READING-LIST.md
 ├── docs/LEARNING-PLAN.md
 ├── 01-chat/
 ├── 02-stream/
