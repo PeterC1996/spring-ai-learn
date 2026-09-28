@@ -1,0 +1,21 @@
+# 与 application.yml 相同。密钥只通过环境变量注入。
+# 嵌入模型名单独用 SPRING_AI_OPENAI_EMBEDDING_OPTIONS_MODEL。
+server:
+  port: 8084
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: 04-memory-rag
+  ai:
+    openai:
+      api-key: ${SPRING_AI_OPENAI_API_KEY:sk-placeholder-not-a-real-key}
+      base-url: ${SPRING_AI_OPENAI_BASE_URL:https://api.openai.com}
+      chat:
+        options:
+          model: ${SPRING_AI_OPENAI_CHAT_OPTIONS_MODEL:gpt-4o-mini}
+          temperature: 0.2
+      embedding:
+        options:
+          model: ${SPRING_AI_OPENAI_EMBEDDING_OPTIONS_MODEL:text-embedding-3-small}

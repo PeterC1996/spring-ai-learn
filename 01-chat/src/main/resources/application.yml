@@ -1,0 +1,17 @@
+# 不要把真实密钥写进这个文件。用环境变量覆盖占位值。
+server:
+  port: 8081
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: 01-chat
+  ai:
+    openai:
+      api-key: ${SPRING_AI_OPENAI_API_KEY:sk-placeholder-not-a-real-key}
+      base-url: ${SPRING_AI_OPENAI_BASE_URL:https://api.openai.com}
+      chat:
+        options:
+          model: ${SPRING_AI_OPENAI_CHAT_OPTIONS_MODEL:gpt-4o-mini}
+          temperature: 0.3
