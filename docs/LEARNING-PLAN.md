@@ -6,8 +6,11 @@
 
 ## 第 1 周：把对话跑起来
 
+开始写代码前，先花半天读背景，再进入第 1 天。下面的「第 N 天」编号不变。
+
 | 天 | 模块 | 做完的标志 |
 | --- | --- | --- |
+| 开始前（约半天） | [LLM-BASICS.md](LLM-BASICS.md)、[AI-AGENTS.md](AI-AGENTS.md) | 能用自己的话讲清 token、temperature、工具调用、RAG，并指出它们落在 01–05 的哪一课。外链在 [READING-LIST.md](READING-LIST.md) |
 | 第 1 天 | 仓库与 `01-chat` | 能说清 `ChatClient` 和 `ChatModel` 谁负责拼提示词、谁负责发请求。改一句 system 提示词，再用 POST `/chat` 问一个问题 |
 | 第 2 天 | `02-stream` | 同一个 `conversationId` 连续问两句，第二句能用上第一句的信息。再看 `/chat/stream` 的输出是一段段出来的 |
 | 第 3 天 | `03-tools` | 分别问「现在几点」「12 乘 7」「订单 A1001」。对照三个 `@Tool` 方法，写下模型为什么会选这个工具 |
